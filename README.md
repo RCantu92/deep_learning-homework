@@ -2,7 +2,9 @@
 
 This project will use the crypto Fear and Greed (FNG) Index to generate a FNG value to compare results with a deep learning model using closing prices. This will determine if the FNG indicator is a better signal than closing data. In the end, both models will attempt to predict closing price.
 
-### Prepare the data for training and testing
+The first step of the project was to prepare the data, as documented below.
+
+## Preparing the data for training and testing
 
 For the Fear and Greed model, the project used the FNG values to predict the closing price.
 
@@ -14,23 +16,55 @@ Applied a MinMaxScaler to the X and y values to scale the data for the model.
 
 Finally, reshaped the X_train and X_test values to fit the model's requirement of (samples, time steps, features).
 
-### Build and train custom LSTM RNNs
+The following step of the project was to build and train the models, as documented below.
 
-In each Jupyter notebook, created the same custom LSTM RNN architecture. In one notebook, the project fit the data using the FNG values. In the second notebook, it fit the data using only closing prices.
+## Build and train custom LSTM RNNs
+
+Each of the Jupyter notebooks in the Code directory were created using the same custom LSTM RNN architecture. In one notebook, the project fit the data using the FNG values. In the second notebook, it fit the data using only closing prices. The notebooks' file names indicate which is which.
 
 It also use the same parameters and training steps for each model. This was necessary to compare each model accurately.
 
-### Evaluate the performance of each model
+Lastly, the final step is to compare each of the findings from each model, as documented below.
 
-Finally, used the testing data to evaluate each model and compare the performance.
+## Evaluate the performance of each model
 
-Then used the data to answer the following:
+In conclusion, the testing data is used to evaluate each model and compare the performance.
 
-> Which model has a lower loss?
->
-> Which model tracks the actual values better over time?
->
-> Which window size works best for the model?
+The data was used to answer the following:
+
+>	Which model has a lower loss?
+
+The model that was a lower loss is using the closing prices to predict future closing prices.
+
+>	Which model tracks the actual values better over time?
+
+The model that tracks the actual values better over time is using the closing prices to predict the closing prices.
+
+>	Which window size works best for the model?
+
+The window size that works best is a twenty day window size.
+
+## Graphical comparisons
+
+Each of the following comparison graphs are in the following order: closing price (top) and FNG (bottom).
+
+### 10-Day Window comparisons
+
+![](./Findings_Graphed/btc_price_10_day_window-closing_price.png)
+
+![](./Findings_Graphed/btc_price_10_day_window-fng.png)
+
+### 15-Day Window comparisons
+
+![](./Findings_Graphed/btc_price_15_day_window-closing_price.png)
+
+![](./Findings_Graphed/btc_price_15_day_window-fng.png)
+
+### 20-Day Window comparisons
+
+![](./Findings_Graphed/btc_price_20_day_window-closing_price.png)
+
+![](./Findings_Graphed/btc_price_20_day_window-fng.png)
 
 ## Built With
 
